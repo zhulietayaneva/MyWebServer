@@ -2,6 +2,7 @@
 {
     using System.Threading.Tasks;
     using Git.Data;
+    using Git.Services;
     using Microsoft.EntityFrameworkCore;
     using MyWebServer;
     using MyWebServer.Controllers;
@@ -15,6 +16,8 @@
                     .MapStaticFiles()
                     .MapControllers())
                 .WithServices(services => services
+                    .Add<IPasswordHasher,PasswordHasher>()
+                    .Add<IValidator,Validator>()
                     .Add<GitDbContext>()
                     .Add<IViewEngine, CompilationViewEngine>())
             .WithConfiguration<GitDbContext>(context => context
@@ -23,10 +26,4 @@
     }
 }
 
-/*
- * 
- * 
 
- * 
- * 
- * */

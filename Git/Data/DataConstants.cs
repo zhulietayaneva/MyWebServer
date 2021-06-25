@@ -14,6 +14,11 @@ namespace Git.Data
         public const int UserMinUsername = 4;
         public const int UserMinPassword = 5;
         public const string UserEmailRegularExpression = @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
+
+
+        public const int RepositoryMinName = 3;
+        public const int RepositoryMaxName = 10;
+
    
     }
 }
